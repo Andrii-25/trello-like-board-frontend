@@ -20,7 +20,12 @@ export default function Card({ card }) {
       ref={drag}
       style={{ opacity: isDragging ? 0.5 : 1 }}
     >
-      {`Edited ${timeSince(Date.parse(card.updatedAt))} ago.`}
+      {card.title}
+      {/* <br />
+      <hr className={styles.hr} /> */}
+      <div className={styles.time}>
+        {`Edited ${timeSince(Date.parse(card.updatedAt))} ago.`}
+      </div>
     </div>
   );
 }

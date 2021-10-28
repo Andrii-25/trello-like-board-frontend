@@ -1,6 +1,6 @@
 .card {
   width: 385px;
-  min-height: 40px;
+  min-height: 70px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
@@ -8,6 +8,18 @@
   cursor: pointer;
 }
 
+.hr {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+}
+
 .card:hover {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
+}
+
+.time {
+  margin-bottom: -20px;
+  margin-left: 5px;
+  font-size: small;
 }
