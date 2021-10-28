@@ -1,19 +1,9 @@
-import "./App.css";
-import Header from "./components/Header";
-import List from "./components/List";
+import MainPage from "./pages/MainPage";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Header />
-      <List />
-      <List />
-      <List />
-      <List />
-      <List />
-      <List />
-    </div>
+    <>
+      <MainPage />
+    </>
   );
 }
-
-export default App;
