@@ -53,3 +53,23 @@
 .btn:hover {
   box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.1);
 }
+
+.btnDelete {
+  float: right;
+  border: 1px solid red;
+  background-color: none;
+  color: red;
+  font-weight: bolder;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  margin: 10px 0 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btnDelete:hover {
+  background-color: #c9d4d0;
+}

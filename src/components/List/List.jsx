@@ -1,11 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCards, updateCard } from "../../actions/card";
 import Card from "../Card/Card";
 import styles from "./List.module.scss";
 import { Scrollbars } from "react-custom-scrollbars";
 import DropWrapper from "../DropWrapper";
-import Modal from "../Modal";
 
 export default function List({ list, handleOpenModal }) {
   const dispatch = useDispatch();
@@ -22,7 +21,6 @@ export default function List({ list, handleOpenModal }) {
 
   const changeList = async (id) => {
     try {
-      console.log(id, list.id);
       await dispatch(updateCard(id, list.id));
       await dispatch(getCards());
     } catch (err) {
@@ -30,12 +28,21 @@ export default function List({ list, handleOpenModal }) {
     }
   };
 
+  function filterCards(cardsArr) {
+    return cardsArr.filter((c) => {
+      return c.list === list.id;
+    });
+  }
+
   return (
     <div className={styles.list}>
       <div className={styles.listHeader}>
         <div className={styles.title}>{list.title}</div>
         <button className={styles.btn} onClick={handleOpenModal}>
           +
+        </button>
+        <button className={styles.btnDelete} onClick={handleOpenModal}>
+          ×
         </button>
       </div>
       <DropWrapper changeList={changeList}>
@@ -45,11 +52,9 @@ export default function List({ list, handleOpenModal }) {
           autoHeightMax={405}
           autoHeightMin={255}
         >
-          {cards
-            .filter((c) => c.list === list.id)
-            .map((c) => {
-              return <Card card={c} key={c.id} />;
-            })}
+          {filterCards(cards).map((c) => {
+            return <Card card={c} key={c.id} />;
+          })}
         </Scrollbars>
       </DropWrapper>
     </div>

@@ -20,7 +20,9 @@ export default function Card({ card }) {
       ref={drag}
       style={{ opacity: isDragging ? 0.5 : 1 }}
     >
-      {card.title}
+      <div className={styles.title}>{card.title}</div>
+      <button className={styles.btn}>🗑️</button>
+      <button className={styles.btn}>✏️</button>
       {/* <br />
       <hr className={styles.hr} /> */}
       <div className={styles.time}>
