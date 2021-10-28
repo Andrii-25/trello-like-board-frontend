@@ -5,8 +5,16 @@ class CardService {
     return http.get("/cards");
   }
 
-  updateCard(id, listId, data) {
-    return http.patch(`/cards/${id}?list_id=${listId}`, data);
+  addCard(data) {
+    return http.post("/cards", data);
+  }
+
+  removeCard(id) {
+    return http.delete(`/cards/${id}`);
+  }
+
+  updateCard(id, data) {
+    return http.patch(`/cards?id=${id}`, data);
   }
 
   updateCardList(id, listId) {

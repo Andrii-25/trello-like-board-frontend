@@ -7,15 +7,8 @@
   margin: 70px 15px 0 15px;
   box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
   padding-bottom: 10px;
-  display: inline-block;
-}
-
-.cardsWrapper {
-  width: 100%;
-  margin-top: 5px;
-  overflow-x: hidden;
-  overflow-y: auto;
-  white-space: nowrap;
+  // display: inline-block;
+  float: left;
 }
 
 .listHeader {
@@ -71,5 +64,24 @@
 }
 
 .btnDelete:hover {
+  background-color: #c9d4d0;
+}
+
+.btnEdit {
+  float: right;
+  border: 1px solid gray;
+  // background-color: #e6f2ee;
+  // color: red;
+  // font-weight: bolder;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  // font-size: 25px;
+  margin: 10px 0 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btnEdit:hover {
   background-color: #c9d4d0;
 }

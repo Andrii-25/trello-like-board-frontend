@@ -9,10 +9,7 @@ export default function Modal(props) {
       }
     >
       <div className={styles.modalBody}>
-        <div className={styles.modalClose} onClick={props.handleCloseModal}>
-          ×
-        </div>
-        <h2>{props.title}</h2>
+        <h1>{props.title}</h1>
         <hr />
         {props.children}
       </div>

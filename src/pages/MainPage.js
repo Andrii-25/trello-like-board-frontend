@@ -6,13 +6,9 @@ import { Scrollbars } from "react-custom-scrollbars";
 import { useEffect } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import Modal from "../components/Modal";
-import useModalHandlers from "../utils/hooks/useModalHandlers";
-import Form from "../components/Form/Form";
+import ListsWrapper from "../components/ListsWrapper";
 
 function MainPage() {
-  const [isOpened, handleOpenModal, handleCloseModal] = useModalHandlers();
-
   const dispatch = useDispatch();
 
   const lists = useSelector((state) => state.lists);
@@ -25,29 +21,29 @@ function MainPage() {
     }
   }, []);
 
+  const listData = (array) => {
+    if (array && array.length) {
+      return array.map((l) => {
+        return <List key={l.id} list={l} />;
+      });
+    } else {
+      return null;
+    }
+  };
+
   return (
     <>
-      <Header handleOpenModal={handleOpenModal} />
+      <Header />
       <DndProvider backend={HTML5Backend}>
-        <Scrollbars style={{ width: "100%", height: 570 }}>
-          {lists.map((list) => {
-            return (
-              <List
-                key={list.id}
-                list={list}
-                handleOpenModal={handleOpenModal}
-              />
-            );
-          })}
+        <Scrollbars
+          style={{
+            height: 570,
+            Width: "100%",
+          }}
+        >
+          {listData(lists)}
         </Scrollbars>
       </DndProvider>
-      <Modal
-        isOpened={isOpened}
-        handleCloseModal={handleCloseModal}
-        title={"Hello!"}
-      >
-        <Form />
-      </Modal>
     </>
   );
 }

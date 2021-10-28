@@ -1,9 +1,21 @@
-import axios from "axios";
+import http from "../http-common";
 
 class ListService {
   getLists() {
-    // return axios.get(`${process.env.API_URL}lists`);
-    return axios.get("http://localhost:8000/lists");
+    return http.get("/lists");
+  }
+
+  addList(data) {
+    return http.post("/lists", data);
+  }
+
+  removeList(id) {
+    console.log(id);
+    return http.delete(`/lists/${id}`);
+  }
+
+  updateList(data, id) {
+    return http.patch(`/lists/${id}`, data);
   }
 }
 
