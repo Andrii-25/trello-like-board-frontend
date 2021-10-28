@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <div className={styles.header}>
-      <div className={styles.title}>ReactTrello</div>
+      <div className={styles.title}>React.Trello</div>
       <button className={styles.btn} onClick={handleOpenModal}>
         Add List
       </button>
