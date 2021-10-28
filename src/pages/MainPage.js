@@ -8,6 +8,7 @@ import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import Modal from "../components/Modal";
 import useModalHandlers from "../utils/hooks/useModalHandlers";
+import Form from "../components/Form/Form";
 
 function MainPage() {
   const [isOpened, handleOpenModal, handleCloseModal] = useModalHandlers();
@@ -44,7 +45,9 @@ function MainPage() {
         isOpened={isOpened}
         handleCloseModal={handleCloseModal}
         title={"Hello!"}
-      />
+      >
+        <Form />
+      </Modal>
     </>
   );
 }

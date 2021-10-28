@@ -1,6 +1,7 @@
 import { useDrag } from "react-dnd";
 import { ItemTypes } from "../../utils/types/items";
 import styles from "./Card.module.scss";
+import timeSince from "../../utils/timeSince";
 
 export default function Card({ card }) {
   const [{ isDragging }, drag] = useDrag({
@@ -19,7 +20,7 @@ export default function Card({ card }) {
       ref={drag}
       style={{ opacity: isDragging ? 0.5 : 1 }}
     >
-      {card.title}
+      {`Edited ${timeSince(Date.parse(card.updatedAt))} ago.`}
     </div>
   );
 }
