@@ -6,8 +6,12 @@ import { Scrollbars } from "react-custom-scrollbars";
 import { useEffect } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import Modal from "../components/Modal";
+import useModalHandlers from "../utils/hooks/useModalHandlers";
 
 function MainPage() {
+  const [isOpened, handleOpenModal, handleCloseModal] = useModalHandlers();
+
   const dispatch = useDispatch();
 
   const lists = useSelector((state) => state.lists);
@@ -22,14 +26,25 @@ function MainPage() {
 
   return (
     <>
-      <Header />
+      <Header handleOpenModal={handleOpenModal} />
       <DndProvider backend={HTML5Backend}>
         <Scrollbars style={{ width: "100%", height: 570 }}>
           {lists.map((list) => {
-            return <List key={list.id} list={list} />;
+            return (
+              <List
+                key={list.id}
+                list={list}
+                handleOpenModal={handleOpenModal}
+              />
+            );
           })}
         </Scrollbars>
       </DndProvider>
+      <Modal
+        isOpened={isOpened}
+        handleCloseModal={handleCloseModal}
+        title={"Hello!"}
+      />
     </>
   );
 }

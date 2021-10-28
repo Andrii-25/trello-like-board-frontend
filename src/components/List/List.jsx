@@ -5,8 +5,9 @@ import Card from "../Card/Card";
 import styles from "./List.module.scss";
 import { Scrollbars } from "react-custom-scrollbars";
 import DropWrapper from "../DropWrapper";
+import Modal from "../Modal";
 
-export default function List({ list }) {
+export default function List({ list, handleOpenModal }) {
   const dispatch = useDispatch();
 
   const cards = useSelector((state) => state.cards);
@@ -33,7 +34,9 @@ export default function List({ list }) {
     <div className={styles.list}>
       <div className={styles.listHeader}>
         <div className={styles.title}>{list.title}</div>
-        <button className={styles.btn}>+</button>
+        <button className={styles.btn} onClick={handleOpenModal}>
+          +
+        </button>
       </div>
       <DropWrapper changeList={changeList}>
         <Scrollbars
