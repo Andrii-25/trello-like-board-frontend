@@ -111,12 +111,7 @@ export default function List({ list }) {
           </button>
         </div>
         <DropWrapper changeList={changeList}>
-          <Scrollbars
-            style={{ width: "100%" }}
-            autoHeight={true}
-            autoHeightMax={405}
-            autoHeightMin={255}
-          >
+          <Scrollbars style={{ width: "100%", height: 355 }}>
             {cardList(filterCards(cards))}
           </Scrollbars>
         </DropWrapper>

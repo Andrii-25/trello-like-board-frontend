@@ -1,5 +1,4 @@
 import styles from "./Modal.module.scss";
-import classNames from "classnames";
 
 export default function Modal(props) {
   return (

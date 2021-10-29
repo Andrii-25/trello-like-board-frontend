@@ -37,7 +37,10 @@ function MainPage() {
         <Scrollbars
           style={{
             height: 570,
-            Width: "100%",
+            width: "100%",
+            overflowX: "hidden",
+            overflowY: "hidden",
+            whiteSpace: "nowrap",
           }}
         >
           {listData(lists)}
