@@ -13,11 +13,7 @@ export default function DropWrapper({ children, changeList }) {
   });
 
   return (
-    <div
-      className={styles.dropWrapper}
-      ref={drop}
-      style={{ backgroundColor: isOver ? "yellow" : null }}
-    >
+    <div className={styles.dropWrapper} ref={drop}>
       {children}
     </div>
   );
