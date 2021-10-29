@@ -6,7 +6,6 @@ import { Scrollbars } from "react-custom-scrollbars";
 import { useEffect } from "react";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import ListsWrapper from "../components/ListsWrapper";
 
 function MainPage() {
   const dispatch = useDispatch();
