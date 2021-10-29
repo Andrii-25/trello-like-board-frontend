@@ -1,13 +1,13 @@
 .card {
-  width: 385px;
+  width: 95%;
   min-height: 70px;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.6);
-  margin: 10px 12.5px 0 12.5px;
+  margin: 10px 2.5% 0 2.5%;
   cursor: pointer;
   @media screen and (max-width: 1150px) {
-    width: 92.5%;
+    width: 89.1%;
   }
 }
 
